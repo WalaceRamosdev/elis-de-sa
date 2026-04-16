@@ -28,6 +28,21 @@ const mainServices = [
   }
 ];
 
+const technicalServices = [
+  { title: "Banho no leito", price: "R$ 80" },
+  { title: "Banho em RN", price: "R$ 35" },
+  { title: "Sondagem vesical de demora", price: "R$ 160" },
+  { title: "Sondagem vesical de alívio", price: "R$ 110" },
+  { title: "Antibióticoterapia", price: "R$ 80" },
+  { title: "Troca de bolsa de colostomia/ileostomia", price: "R$ 70" },
+  { title: "Limpeza de cânula endotraqueal", price: "R$ 70" },
+  { title: "Curativos infectados", price: "R$ 70" },
+  { title: "Curativos limpos", price: "R$ 40" },
+  { title: "Retirada de pontos", price: "R$ 45" },
+  { title: "Aspiração traqueal e vias aéreas superiores", price: "R$ 45" },
+  { title: "Aplicação de medicação", price: "R$ 25" }
+];
+
 const complementaryServices = [
   "Avaliação de sinais vitais e bem-estar materno",
   "Avaliação de lóquios (fluxo pós-parto)",
@@ -71,6 +86,43 @@ const complementaryServices = [
     </div>
   </section>
 
+  <section class="technical-procedures section">
+    <div class="container">
+      <div class="procedures-wrapper">
+        <h2 class="text-center">Procedimentos Técnicos</h2>
+        <p class="text-center section-subtitle">Serviços pontuais de enfermagem realizados com precisão e cuidado.</p>
+        
+        <div class="accordion">
+          <details>
+            <summary>
+              <span>Ver lista completa de procedimentos e valores</span>
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <div class="accordion-content">
+              <div class="procedures-grid">
+                {technicalServices.map(service => (
+                  <div class="procedure-item">
+                    <span class="procedure-title">{service.title}</span>
+                    <span class="procedure-divider"></span>
+                    <span class="procedure-price">{service.price}</span>
+                    <a href={`https://wa.me/5511986214894?text=Olá%20Elis!%20Tenho%20interesse%20no%20procedimento:%20${service.title}`} class="procedure-link" title="Agendar via WhatsApp">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                        <path d="M12.031 6.172c-2.315 0-4.191 1.876-4.191 4.191 0 2.315 1.876 4.191 4.191 4.191 2.315 0 4.191-1.876 4.191-4.191 0-2.315-1.876-4.191-4.191-4.191zm7.56 5.828c0 4.072-3.303 7.375-7.375 7.375s-7.375-3.303-7.375-7.375 3.303-7.375 7.375-7.375 7.375 3.303 7.375 7.375z" opacity=".4"/>
+                        <path d="M12.031 2.375c-5.412 0-9.813 4.401-9.813 9.813 0 1.733.454 3.359 1.242 4.773l-1.321 4.825 4.954-1.3c1.4.75 2.983 1.177 4.671 1.177 5.412 0 9.813-4.401 9.813-9.813s-4.401-9.813-9.813-9.813zm5.415 13.918c-.244.686-1.229 1.259-1.696 1.341-.467.082-.916.123-2.909-.675-2.541-1.018-4.225-3.568-4.352-3.737-.127-.169-.941-1.254-.941-2.392 0-1.138.591-1.693.803-1.921.212-.228.467-.285.623-.285.155 0 .31.001.446.007.143.006.335-.054.526.406.191.46.654 1.595.711 1.708.057.113.095.244.02.394-.075.15-.113.244-.225.375-.113.131-.237.292-.338.393-.113.113-.232.235-.1.464.131.23.585.955 1.255 1.554.854.762 1.536 1.001 1.761 1.114.225.113.355.096.488-.056.133-.152.569-.661.721-.887.152-.226.304-.188.513-.113s1.334.629 1.562.742c.228.113.38.169.436.264.056.095.056.551-.188 1.237z"/>
+                      </svg>
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="complementary section bg-light">
     <div class="container">
       <div class="complementary-box">
@@ -87,6 +139,7 @@ const complementaryServices = [
         </ul>
         <div class="text-center mt-4">
           <p>Precisa de algo específico? Entre em contato para uma avaliação personalizada.</p>
+          <a href="/contato" class="btn btn-outline" style="margin-top: 20px;">Falar com a Elis</a>
         </div>
       </div>
     </div>
@@ -169,6 +222,116 @@ const complementaryServices = [
     font-weight: 700;
     color: var(--primary);
   }
+
+  /* Accordion Styles */
+  .technical-procedures {
+    background-color: var(--white);
+  }
+
+  .procedures-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-subtitle {
+    margin-bottom: 30px;
+    color: var(--text-light);
+  }
+
+  .accordion {
+    border: 1px solid var(--rose);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+
+  details {
+    background: var(--white);
+  }
+
+  summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--dark-brown);
+    list-style: none;
+    transition: var(--transition);
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary:hover {
+    background-color: var(--rose);
+  }
+
+  summary svg {
+    transition: transform 0.3s ease;
+    color: var(--primary);
+  }
+
+  details[open] summary svg {
+    transform: rotate(180deg);
+  }
+
+  .accordion-content {
+    padding: 0 30px 30px;
+    border-top: 1px solid var(--rose);
+    background-color: var(--gray);
+  }
+
+  .procedures-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding-top: 25px;
+  }
+
+  .procedure-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--rose);
+  }
+
+  .procedure-item:last-child {
+    border-bottom: none;
+  }
+
+  .procedure-title {
+    font-weight: 500;
+    color: var(--text-dark);
+  }
+
+  .procedure-divider {
+    flex-grow: 1;
+    border-bottom: 1px dotted var(--primary);
+    opacity: 0.3;
+  }
+
+  .procedure-price {
+    font-weight: 700;
+    color: var(--primary);
+    white-space: nowrap;
+  }
+
+  .procedure-link {
+    color: #25d366;
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+  }
+
+  .procedure-link:hover {
+    transform: scale(1.2);
+  }
   
   .complementary-box {
     max-width: 800px;
@@ -210,5 +373,9 @@ const complementaryServices = [
     .complementary-list { grid-template-columns: 1fr; }
     
     .service-text { padding: 25px; }
+
+    summary { padding: 20px; font-size: 1.1rem; }
+    .accordion-content { padding: 0 20px 20px; }
   }
 </style>
+

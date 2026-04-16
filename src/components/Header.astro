@@ -22,7 +22,7 @@ const navItems = [
           ))}
         </ul>
       </nav>
-      <a href="https://wa.me/5511986214894" class="btn btn-primary nav-cta">Agendar Consulta</a>
+      <a href="https://wa.me/5511986214894" class="btn btn-primary nav-cta" target="_blank">Agendar Consulta</a>
       
       <button class="menu-toggle" aria-label="Abrir menu" id="menu-btn">
         <span></span>
@@ -37,7 +37,7 @@ const navItems = [
       {navItems.map(item => (
         <li><a href={item.href} class="mobile-nav-link">{item.name}</a></li>
       ))}
-      <li><a href="https://wa.me/5511986214894" class="btn btn-primary w-full">Agendar Consulta</a></li>
+      <li><a href="https://wa.me/5511986214894" class="btn btn-primary w-full" target="_blank">Agendar Consulta</a></li>
     </ul>
   </div>
 </header>
@@ -74,7 +74,7 @@ const navItems = [
     height: 50px;
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.08));
+    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.5));
   }
   
   .nav-wrapper {
