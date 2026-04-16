@@ -11,8 +11,7 @@ const navItems = [
 <header class="header">
   <div class="container header-container">
     <a href="/" class="logo">
-      <span class="logo-text">Elis de Sá</span>
-      <span class="logo-sub">Enfermeira</span>
+      <img src="/images/logo/logo.svg" alt="Elis de Sá - Enfermeira" class="logo-img" />
     </a>
     
     <div class="nav-wrapper">
@@ -66,27 +65,16 @@ const navItems = [
   
   .logo {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     text-decoration: none;
     z-index: 1001;
   }
   
-  .logo-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--dark-brown);
-    line-height: 1;
-    letter-spacing: -0.5px;
-  }
-  
-  .logo-sub {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    color: var(--primary);
-    font-weight: 600;
-    margin-top: 4px;
+  .logo-img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    
   }
   
   .nav-wrapper {

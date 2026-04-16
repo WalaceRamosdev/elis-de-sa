@@ -6,8 +6,7 @@ const currentYear = new Date().getFullYear();
   <div class="container footer-grid">
     <div class="footer-info">
       <div class="logo">
-        <span class="logo-text">Elis de Sá</span>
-        <span class="logo-sub">Enfermeira</span>
+        <img src="/images/logo/logo.svg" alt="Elis de Sá - Enfermeira" class="logo-img" />
       </div>
       <p class="footer-desc">
         Dedicada ao cuidado humanizado, acreditando que entre a técnica e a entrega, existe amor. Atendimento profissional em Suzano e região.
@@ -75,22 +74,16 @@ const currentYear = new Date().getFullYear();
   
   .logo {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     margin-bottom: 20px;
   }
   
-  .logo-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--dark-brown);
-  }
-  
-  .logo-sub {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--primary);
+  .logo-img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(29%) sepia(85%) devia(10%) hue-rotate(345deg) brightness(95%) contrast(90%); /* Example to make it match theme if needed, but let's keep it original for now */
+    filter: none;
   }
   
   .footer-desc {
