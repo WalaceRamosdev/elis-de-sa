@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://elis-de-sa-enfermeira.com.br/sitemap-index.xml

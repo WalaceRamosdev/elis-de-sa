@@ -1,0 +1,169 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Sobre Mim" description="Conheça a história e a trajetória de Elis de Sá, enfermeira com 6 anos de experiência no HC-SP e especialista Einstein em Enfermagem Obstétrica.">
+  <section class="about-hero section">
+    <div class="container grid-2">
+      <div class="about-image">
+        <!-- Substitua por: /images/profissional/elis-sobre.webp -->
+        <img src="images/profissional/elis-about-clean.webp" alt="Elis de Sá - Enfermeira" class="profile-img" />
+      </div>
+      <div class="about-content">
+        <span class="badge">Minha Trajetória</span>
+        <h1>Quem é Elis de Sá?</h1>
+        <p class="lead">Dedicada, apaixonada pelo cuidado humanizado, acreditando que entre a técnica e a entrega, existe amor.</p>
+        <p>Sou enfermeira assistencial há 6 anos, com uma trajetória sólida construída no <strong>Hospital das Clínicas de São Paulo</strong>, uma das instituições de saúde mais renomadas do país. Minha experiência hospitalar me trouxe a segurança técnica necessária para lidar com as mais diversas situações, sempre com foco na excelência do atendimento.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="specialization section bg-light">
+    <div class="container">
+      <div class="grid-2 reverse">
+        <div class="content">
+          <h2>Especialização e Propósito</h2>
+          <p>Buscando sempre oferecer o melhor para as minhas pacientes, especializei-me em <strong>Enfermagem Obstétrica e Ginecológica</strong> pela prestigiada <strong>Faculdade Israelita de Ciência da Saúde Albert Einstein</strong>.</p>
+          <p>Hoje, meu propósito é levar esse conhecimento e cuidado especializado para dentro da sua casa. Acredito que o momento da gestação e o pós-parto exigem uma escuta ativa, suporte emocional e uma assistência técnica que respeite a individualidade de cada mulher e de cada família.</p>
+          
+          <div class="stats">
+            <div class="stat-item">
+              <strong>6+</strong>
+              <span>Anos no HC-SP</span>
+            </div>
+            <div class="stat-item">
+              <strong>Einstein</strong>
+              <span>Especialização</span>
+            </div>
+            <div class="stat-item">
+              <strong>100%</strong>
+              <span>Humanizado</span>
+            </div>
+          </div>
+        </div>
+        <div class="image">
+         <img src="https://images.unsplash.com/photo-1505751172107-573955a04320?auto=format&fit=crop&q=80&w=800" alt="Consultório acolhedor" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="values section">
+    <div class="container text-center">
+      <h2>Abordagem Humanizada</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <h3>Escuta Ativa</h3>
+          <p>Entendendo seus medos e expectativas para um atendimento personalizado.</p>
+        </div>
+        <div class="value-card">
+          <h3>Segurança Técnica</h3>
+          <p>O rigor do ambiente hospitalar aplicado no conforto do seu lar.</p>
+        </div>
+        <div class="value-card">
+          <h3>Conexão Emocional</h3>
+          <p>Um vínculo de cuidado que vai além do procedimento de enfermagem.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="cta section">
+    <div class="container text-center">
+      <a href="https://wa.me/5511986214894" class="btn btn-whatsapp">Vamos conversar sobre seu cuidado?</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+  }
+  
+  .grid-2.reverse {
+    grid-template-columns: 1.2fr 1fr;
+  }
+  
+  .profile-img {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .lead {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 20px;
+  }
+  
+  .about-content p {
+    margin-bottom: 20px;
+    color: var(--text-light);
+  }
+  
+  .bg-light {
+    background-color: var(--gray);
+  }
+  
+  .stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .stat-item {
+    text-align: center;
+  }
+  
+  .stat-item strong {
+    display: block;
+    font-size: 2rem;
+    color: var(--primary);
+    line-height: 1;
+  }
+  
+  .stat-item span {
+    font-size: 0.9rem;
+    color: var(--text-light);
+  }
+  
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+  }
+  
+  .value-card {
+    padding: 30px;
+    border: 1px solid var(--rose);
+    border-radius: var(--radius);
+    transition: var(--transition);
+  }
+  
+  .value-card:hover {
+    background: var(--rose);
+    transform: translateY(-5px);
+  }
+  
+  .value-card h3 {
+    margin-bottom: 15px;
+    color: var(--dark-brown);
+  }
+
+  @media (max-width: 768px) {
+    .grid-2, .grid-2.reverse {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    
+    .grid-2.reverse .image { order: -1; }
+    
+    .stats { justify-content: center; }
+    
+    .values-grid { grid-template-columns: 1fr; }
+  }
+</style>

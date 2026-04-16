@@ -1,0 +1,214 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const mainServices = [
+  {
+    title: "Ausculta de BCF",
+    description: "Ouça o coração do seu bebê no conforto do seu lar com segurança técnica e monitoramento profissional.",
+    price: "R$ 55",
+    image: "/images/servicos/servico_ausculta_bcf.webp"
+  },
+  {
+    title: "Aferição de sinais vitais",
+    description: "Acompanhamento rigoroso da pressão arterial, temperatura, frequência cardíaca e respiratória.",
+    price: "R$ 25",
+    image: "/images/servicos/servico_sinais_vitais.webp"
+  },
+  {
+    title: "Taping terapêutico gestacional",
+    description: "Alívio imediato para dores lombares, auxílio na postura e redução de edemas durante a gestação.",
+    price: "R$ 200",
+    image: "/images/servicos/servico_taping_gestacional.webp"
+  },
+  {
+    title: "Taping pós-parto",
+    description: "Auxílio na reorganização tecidual, redução de inchaço e suporte para a região abdominal pós-cesárea ou parto normal.",
+    price: "R$ 200",
+    image: "/images/servicos/servico_taping_pos_parto.webp"
+  }
+];
+
+const complementaryServices = [
+  "Avaliação de sinais vitais e bem-estar materno",
+  "Avaliação de lóquios (fluxo pós-parto)",
+  "Avaliação de involução uterina",
+  "Avaliação de episiotomia / cicatriz de cesariana",
+  "Monitoramento de complicações",
+  "Realização de curativos",
+  "Administração de medicamentos prescritos"
+];
+---
+
+<Layout title="Serviços" description="Serviços de enfermagem domiciliar em Suzano: Ausculta de BCF, Taping Terapêutico, cuidados pós-parto e monitoramento clínico completo.">
+  <section class="services-hero section">
+    <div class="container text-center">
+      <span class="badge">Cuidados Especializados</span>
+      <h1>Como posso te ajudar?</h1>
+      <p class="lead">Atendimento domiciliar humanizado em Suzano e arredores.</p>
+    </div>
+  </section>
+
+  <section class="main-services section">
+    <div class="container">
+      <div class="main-services-list">
+        {mainServices.map(service => (
+          <div class="service-detail-card">
+            <div class="service-img">
+              <img src={service.image} alt={service.title} />
+            </div>
+            <div class="service-text">
+              <h2>{service.title}</h2>
+              <p>{service.description}</p>
+              <div class="price-box">
+                <span class="label">Valor do investimento:</span>
+                <span class="amount">{service.price}</span>
+              </div>
+              <a href={`https://wa.me/5511986214894?text=Olá%20Elis!%20Tenho%20interesse%20no%20serviço:%20${service.title}`} class="btn btn-whatsapp">Agendar este serviço</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="complementary section bg-light">
+    <div class="container">
+      <div class="complementary-box">
+        <h2 class="text-center">Além disso, ofereço suporte em:</h2>
+        <ul class="complementary-list">
+          {complementaryServices.map(item => (
+            <li>
+              <svg viewBox="0 0 24 24" width="24" height="24">
+                <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+              </svg>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="text-center mt-4">
+          <p>Precisa de algo específico? Entre em contato para uma avaliação personalizada.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .services-hero {
+    background-color: var(--rose);
+    padding: 60px 0;
+  }
+  
+  .services-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  .main-services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+  
+  .service-detail-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .service-detail-card:nth-child(even) {
+    direction: rtl;
+  }
+  
+  .service-detail-card:nth-child(even) .service-text {
+    direction: ltr;
+  }
+  
+  .service-img img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+  
+  .service-text {
+    padding: 40px;
+  }
+  
+  .service-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .service-text p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+  
+  .price-box {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: var(--gray);
+    border-radius: 8px;
+  }
+  
+  .price-box .label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 5px;
+  }
+  
+  .price-box .amount {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+  }
+  
+  .complementary-box {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 50px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .complementary-list {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  
+  .complementary-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+  }
+  
+  .complementary-list li svg {
+    color: var(--primary);
+    flex-shrink: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .service-detail-card {
+      grid-template-columns: 1fr;
+      direction: ltr !important;
+    }
+    
+    .service-img img { height: 250px; }
+    
+    .complementary-list { grid-template-columns: 1fr; }
+    
+    .service-text { padding: 25px; }
+  }
+</style>

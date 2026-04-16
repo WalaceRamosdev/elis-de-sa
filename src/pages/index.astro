@@ -1,0 +1,342 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Início">
+  <!-- Hero Section -->
+  <section class="hero fade-in">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <span class="badge">Especialista em Enfermagem Obstétrica</span>
+        <h1>Entre a técnica e a entrega, existe <span>amor</span>.</h1>
+        <p>Cuidados humanizados e especializados para gestantes, puérperas e recém-nascidos no conforto do seu lar em Suzano.</p>
+        <div class="hero-actions">
+          <a href="https://wa.me/5511986214894" class="btn btn-whatsapp">Agendar pelo WhatsApp</a>
+          <a href="/servicos" class="btn btn-outline">Conhecer Serviços</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="image-wrapper">
+          <!-- Substitua por: /images/profissional/elis-hero.webp -->
+          <img src="images/profissional/elis-hero-clean.webp" alt="Elis de Sá - Enfermeira" loading="eager" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Authority Section -->
+  <section class="authority section">
+    <div class="container">
+      <div class="authority-grid">
+        <div class="authority-card">
+          <div class="icon">🏥</div>
+          <h3>6+ Anos de Experiência</h3>
+          <p>Atuação no Hospital das Clínicas de São Paulo, referência em saúde.</p>
+        </div>
+        <div class="authority-card">
+          <div class="icon">🎓</div>
+          <h3>Especialista Einstein</h3>
+          <p>Pós-graduada em Enfermagem Obstétrica e Ginecológica pela Faculdade Albert Einstein.</p>
+        </div>
+        <div class="authority-card">
+          <div class="icon">❤️</div>
+          <h3>Cuidado Humanizado</h3>
+          <p>Foco na conexão emocional e segurança da mãe e do bebê.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Services -->
+  <section class="services section bg-light">
+    <div class="container">
+      <h2 class="text-center">Serviços em Destaque</h2>
+      <p class="text-center section-subtitle">Cuidado especializado onde você mais se sente segura.</p>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-image">
+            <img src="/images/servicos/servico_ausculta_bcf.webp" alt="Ausculta de BCF" loading="lazy" />
+          </div>
+          <div class="service-info">
+            <h3>Ausculta de BCF</h3>
+            <p>Ouça o coração do seu bebê no conforto do seu lar com segurança técnica.</p>
+            <span class="price">R$ 55</span>
+            <a href="/servicos" class="btn-text">Saiba mais →</a>
+          </div>
+        </div>
+        
+        <div class="service-card highlight">
+          <div class="service-image">
+            <img src="/images/servicos/servico_taping_gestacional.webp" alt="Taping Terapêutico" loading="lazy" />
+          </div>
+          <div class="service-info">
+            <h3>Taping Terapêutico</h3>
+            <p>Alívio imediato para desconfortos da gestação e auxílio na recuperação pós-parto.</p>
+            <span class="price">R$ 200</span>
+            <a href="/servicos" class="btn-text">Saiba mais →</a>
+          </div>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-image">
+            <img src="/images/servicos/servico_sinais_vitais.webp" alt="Sinais Vitais" loading="lazy" />
+          </div>
+          <div class="service-info">
+            <h3>Monitoramento</h3>
+            <p>Aferição de sinais vitais e acompanhamento clínico rigoroso para sua tranquilidade.</p>
+            <span class="price">R$ 25</span>
+            <a href="/servicos" class="btn-text">Saiba mais →</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-4">
+        <a href="/servicos" class="btn btn-primary">Ver todos os serviços</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials section">
+    <div class="container">
+      <h2 class="text-center">O que dizem as mamães</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p>"A Elis foi um anjo no meu pós-parto. O taping ajudou muito na minha recuperação e o carinho dela me deu muita segurança."</p>
+          <div class="author">
+            <strong>Mariana S.</strong>
+            <span>Suzano, SP</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p>"Poder ouvir o coração do meu pequeno em casa foi emocionante. A Elis é extremamente profissional e delicada."</p>
+          <div class="author">
+            <strong>Fernanda L.</strong>
+            <span>Mogi das Cruzes, SP</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta section">
+    <div class="container cta-container">
+      <h2>Pronta para um cuidado humanizado?</h2>
+      <p>Entre em contato agora e tire suas dúvidas ou agende uma visita domiciliar.</p>
+      <a href="https://wa.me/5511986214894" class="btn btn-whatsapp">Falar com Elis no WhatsApp</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero {
+    padding: 100px 0 60px;
+    background: linear-gradient(135deg, var(--rose) 0%, var(--white) 100%);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  .hero-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 50px;
+    align-items: center;
+  }
+  
+  .badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 24px;
+  }
+  
+  .hero-content h1 span {
+    color: var(--primary);
+    font-style: italic;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    max-width: 500px;
+  }
+  
+  .hero-actions {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .btn-outline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+  }
+  
+  .btn-outline:hover {
+    background: var(--primary);
+    color: white;
+  }
+  
+  .hero-image .image-wrapper {
+    position: relative;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    animation: blob 10s infinite alternate;
+  }
+  
+  @keyframes blob {
+    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    100% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+  }
+  
+  .authority-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  
+  .authority-card {
+    text-align: center;
+    padding: 40px;
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+  }
+  
+  .authority-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .authority-card .icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .bg-light {
+    background-color: var(--gray);
+  }
+  
+  .section-subtitle {
+    margin-bottom: 50px;
+    color: var(--text-light);
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  
+  .service-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+  }
+  
+  .service-card.highlight {
+    border: 2px solid var(--primary);
+    transform: scale(1.05);
+  }
+  
+  .service-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  .service-info {
+    padding: 25px;
+  }
+  
+  .service-info h3 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+  }
+  
+  .service-info .price {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 15px 0;
+  }
+  
+  .btn-text {
+    font-weight: 600;
+    color: var(--dark-brown);
+  }
+  
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  
+  .testimonial-card {
+    padding: 40px;
+    background: var(--rose);
+    border-radius: var(--radius);
+    position: relative;
+  }
+  
+  .testimonial-card p {
+    font-style: italic;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+  }
+  
+  .author strong {
+    display: block;
+    color: var(--dark-brown);
+  }
+  
+  .cta-container {
+    background: var(--dark-brown);
+    border-radius: var(--radius);
+    padding: 80px 40px;
+    text-align: center;
+    color: var(--white);
+  }
+  
+  .cta-container h2 {
+    color: var(--white);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .cta-container p {
+    margin-bottom: 40px;
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+  
+  .mt-4 { margin-top: 40px; }
+
+  @media (max-width: 992px) {
+    .hero-container { grid-template-columns: 1fr; text-align: center; }
+    .hero-content p { margin: 0 auto 40px; }
+    .hero-actions { justify-content: center; }
+    .authority-grid, .services-grid, .testimonials-grid { grid-template-columns: 1fr; }
+    .hero-content h1 { font-size: 2.5rem; }
+    .service-card.highlight { transform: scale(1); }
+  }
+</style>
