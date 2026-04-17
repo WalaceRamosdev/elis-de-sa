@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsappButton from '../components/WhatsappButton.astro';
+import WelcomePortal from '../components/WelcomePortal.astro';
 
 interface Props {
 	title: string;
@@ -11,6 +12,7 @@ interface Props {
 	hideHeader?: boolean;
 	hideFooter?: boolean;
 	hideWhatsapp?: boolean;
+  hidePortal?: boolean;
   canonicalURL?: string;
 }
 
@@ -21,7 +23,8 @@ const {
   canonicalURL = Astro.url.href,
   hideHeader = false,
   hideFooter = false,
-  hideWhatsapp = false
+  hideWhatsapp = false,
+  hidePortal = false
 } = Astro.props;
 
 const businessSchema = {
@@ -89,6 +92,7 @@ const businessSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
 	</head>
 	<body>
+    {!hidePortal && <WelcomePortal />}
 		{!hideHeader && <Header />}
 		<main>
 			<slot />

@@ -76,17 +76,22 @@ const currentYear = new Date().getFullYear();
   }
   
   .logo {
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
+    background: var(--dark-brown);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
     margin-bottom: 20px;
+    box-shadow: var(--shadow-md);
   }
   
   .logo-img {
-    height: 60px;
+    height: 50px;
     width: auto;
     object-fit: contain;
-    filter: brightness(0) saturate(100%) invert(29%) sepia(85%) devia(10%) hue-rotate(345deg) brightness(95%) contrast(90%); /* Example to make it match theme if needed, but let's keep it original for now */
-    filter: none;
+    filter: brightness(0) invert(1);
   }
   
   .footer-desc {

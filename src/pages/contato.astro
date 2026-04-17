@@ -190,8 +190,23 @@ import Layout from '../layouts/Layout.astro';
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
     
-    // Simplistic success feedback
-    alert(`Obrigada, ${data.name}! Recebi sua mensagem e entrarei em contato em breve.`);
+    // WhatsApp Number
+    const phone = "5511986214894";
+    
+    // Constructing the message
+    const message = `Olá Elis!
+Me chamo ${data.name}. 
+Meu contato: ${data.phone}
+Mensagem: ${data.message}`;
+    
+    // Encoding message for URL
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
+    
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+    
+    // Feedback and Reset
     form.reset();
   });
 </script>

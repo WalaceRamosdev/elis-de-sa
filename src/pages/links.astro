@@ -21,7 +21,7 @@ const links = [
     icon: "📋",
     description: "Lista completa de procedimentos e cuidados"
   },
-  {
+  /*{
     title: "Taping Terapêutico",
     url: "https://wa.me/5511986214894?text=Olá%20Elis!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Taping%20Gestacional.",
     icon: "🩹",
@@ -32,7 +32,7 @@ const links = [
     url: "https://wa.me/5511986214894?text=Olá%20Elis!%20Gostaria%20de%20agendar%20uma%20Ausculta%20de%20BCF.",
     icon: "💓",
     description: "Ouça o coração do seu bebê no conforto do lar"
-  },
+  },*/
   {
     title: "Como Chegar",
     url: "https://maps.app.goo.gl/9P8LpG8S7H9L9S7H7",
@@ -54,32 +54,46 @@ const links = [
   hideHeader={true}
   hideFooter={true}
   hideWhatsapp={true}
+  hidePortal={true}
 >
   <main class="links-page">
     <div class="background-blobs">
       <div class="blob blob-1"></div>
       <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
     </div>
 
     <div class="container links-container">
-       <header class="links-header">
+      <header class="links-header fade-in-up">
         <div class="profile-area">
-          <div class="profile-image">
-            <img src="/images/profissional/elis-hero-clean1.webp" alt="Elis de Sá" />
-          </div>
-          <div class="logo-mini">
-            <img src="/images/logo/logo.svg" alt="Logo Elis de Sá" />
+          <div class="profile-image-wrapper">
+            <div class="profile-ring"></div>
+            <div class="profile-image">
+              <img src="/images/profissional/elis-hero-clean1.webp" alt="Elis de Sá" />
+            </div>
+            <div class="logo-mini">
+              <img src="/images/logo/logo.svg" alt="Logo Elis de Sá" />
+            </div>
           </div>
         </div>
         <h1>Elis de Sá</h1>
         <p class="subtitle">Enfermeira Obstétrica & Ginecológica</p>
-        <p class="tagline">Cuidados humanizados em Suzano e Região</p>
+        <p class="tagline">Cuidado humanizado e especializado no conforto do seu lar.</p>
       </header>
 
       <section class="links-grid">
-        {links.map(link => (
-          <a href={link.url} class={`link-card ${link.primary ? 'primary' : ''}`} target={link.url.startsWith('http') ? '_blank' : '_self'} rel="noopener noreferrer">
-            <div class="link-icon">{link.icon}</div>
+        {links.map((link, index) => (
+          <a 
+            href={link.url} 
+            class={`link-card ${link.primary ? 'primary' : ''}`} 
+            target={link.url.startsWith('http') ? '_blank' : '_self'} 
+            rel="noopener noreferrer"
+            style={`animation-delay: ${0.1 * (index + 1)}s`}
+          >
+            <div class="link-icon">
+              <span class="icon-inner">{link.icon}</span>
+              <div class="icon-glow"></div>
+            </div>
             <div class="link-text">
               <span class="link-title">{link.title}</span>
               <span class="link-description">{link.description}</span>
@@ -93,8 +107,10 @@ const links = [
         ))}
       </section>
 
-      <footer class="links-footer">
-        <p>Acompanhe meu trabalho também no <a href="https://instagram.com/enf_elisdesá" target="_blank">Instagram</a></p>
+      <footer class="links-footer fade-in" style="animation-delay: 0.8s">
+        <div class="social-prompt">
+          Acompanhe meu trabalho também no <a href="https://instagram.com/enf_elisdesá" target="_blank">Instagram</a>
+        </div>
         <div class="brand">Desenvolvido por <a href="https://www.sitesalphacode.com.br/solucoes/medicos" target="_blank">Alpha Code</a></div>
       </footer>
     </div>
@@ -104,15 +120,16 @@ const links = [
 <style>
   .links-page {
     min-height: 100vh;
-    background-color: var(--white);
+    background-color: #fffaf7;
     position: relative;
     overflow: hidden;
     padding: 60px 20px;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
   }
 
-  /* Background Blobs for Aesthetic */
+  /* Dynamic Background Blobs */
   .background-blobs {
     position: absolute;
     top: 0;
@@ -126,28 +143,46 @@ const links = [
   .blob {
     position: absolute;
     border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.3;
+    filter: blur(100px);
+    opacity: 0.25;
+    animation: floatBlob 20s infinite alternate cubic-bezier(0.45, 0.05, 0.55, 0.95);
   }
 
   .blob-1 {
-    width: 300px;
-    height: 300px;
-    background-color: var(--rose);
-    top: -100px;
+    width: 500px;
+    height: 500px;
+    background-color: var(--primary);
+    top: -150px;
     right: -100px;
+    animation-duration: 15s;
   }
 
   .blob-2 {
+    width: 600px;
+    height: 600px;
+    background-color: var(--rose);
+    bottom: -200px;
+    left: -150px;
+    animation-delay: -2s;
+  }
+
+  .blob-3 {
     width: 400px;
     height: 400px;
-    background-color: var(--secondary);
-    bottom: -150px;
-    left: -150px;
+    background-color: var(--accent);
+    top: 30%;
+    left: -100px;
+    animation-duration: 25s;
+    opacity: 0.15;
+  }
+
+  @keyframes floatBlob {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(50px, 100px) scale(1.1); }
   }
 
   .links-container {
-    max-width: 550px;
+    max-width: 480px;
     width: 100%;
     position: relative;
     z-index: 1;
@@ -159,29 +194,62 @@ const links = [
 
   .links-header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    width: 100%;
   }
 
+  /* Profile Design */
   .profile-area {
     position: relative;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     display: inline-block;
   }
 
+  .profile-image-wrapper {
+    position: relative;
+    width: 140px;
+    height: 140px;
+  }
+
+  .profile-ring {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: pulse 4s infinite;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.05); opacity: 0.1; }
+    100% { transform: scale(1); opacity: 0.3; }
+  }
+
   .profile-image {
-    width: 130px;
-    height: 130px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     overflow: hidden;
-    border: 5px solid var(--white);
-    box-shadow: var(--shadow-lg);
-    background-color: var(--rose);
+    border: 4px solid var(--white);
+    box-shadow: 0 15px 35px rgba(88, 47, 14, 0.15);
+    background-color: var(--white);
+    position: relative;
+    z-index: 2;
   }
 
   .profile-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .profile-image:hover img {
+    transform: scale(1.1);
   }
 
   .logo-mini {
@@ -189,14 +257,16 @@ const links = [
     bottom: 5px;
     right: 5px;
     background: var(--white);
-    padding: 8px;
+    padding: 6px;
     border-radius: 50%;
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     width: 32px;
     height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 3;
+    border: 2px solid var(--rose);
   }
 
   .logo-mini img {
@@ -205,28 +275,32 @@ const links = [
   }
 
   .links-header h1 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     color: var(--dark-brown);
     margin-bottom: 8px;
     font-family: 'Playfair Display', serif;
+    letter-spacing: -0.5px;
   }
 
   .subtitle {
-    font-weight: 600;
+    font-weight: 700;
     color: var(--primary);
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-size: 0.85rem;
-    margin-bottom: 10px;
+    letter-spacing: 2.5px;
+    font-size: 0.8rem;
+    margin-bottom: 12px;
   }
 
   .tagline {
     color: var(--text-light);
-    font-size: 1rem;
-    max-width: 300px;
+    font-size: 1.05rem;
+    max-width: 320px;
     margin: 0 auto;
+    font-weight: 400;
+    line-height: 1.4;
   }
 
+  /* Links Grid & Performance */
   .links-grid {
     width: 100%;
     display: flex;
@@ -236,21 +310,29 @@ const links = [
   }
 
   .link-card {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(212, 163, 115, 0.15);
-    border-radius: 20px;
-    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 24px;
+    padding: 18px 24px;
     display: flex;
     align-items: center;
-    gap: 15px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: var(--shadow-sm);
+    gap: 18px;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(88, 47, 14, 0.03);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards;
+  }
+
+  @keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .link-card:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(88, 47, 14, 0.1);
     border-color: var(--primary);
     background: white;
   }
@@ -259,11 +341,11 @@ const links = [
     background: linear-gradient(135deg, var(--primary) 0%, var(--dark-brown) 100%);
     color: var(--white);
     border: none;
-    box-shadow: 0 10px 20px rgba(212, 163, 115, 0.3);
+    box-shadow: 0 12px 25px rgba(212, 163, 115, 0.3);
   }
 
   .link-card.primary:hover {
-    box-shadow: 0 15px 30px rgba(212, 163, 115, 0.4);
+    box-shadow: 0 20px 40px rgba(212, 163, 115, 0.45);
   }
 
   .link-card.primary .link-description {
@@ -271,7 +353,8 @@ const links = [
   }
 
   .link-card.primary .link-icon {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
   }
 
   .link-card.primary .link-arrow {
@@ -279,15 +362,21 @@ const links = [
   }
 
   .link-icon {
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
     background: var(--rose);
-    border-radius: 14px;
+    border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     flex-shrink: 0;
+    position: relative;
+    transition: transform 0.5s ease;
+  }
+
+  .link-card:hover .link-icon {
+    transform: rotate(10deg);
   }
 
   .link-text {
@@ -298,7 +387,7 @@ const links = [
 
   .link-title {
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: inherit;
     font-family: 'Outfit', sans-serif;
   }
@@ -306,58 +395,111 @@ const links = [
   .link-description {
     font-size: 0.85rem;
     color: var(--text-light);
-    margin-top: 2px;
+    margin-top: 3px;
+    font-weight: 400;
   }
 
   .link-arrow {
     color: var(--primary);
-    opacity: 0.4;
-    transition: var(--transition);
+    opacity: 0.3;
+    transition: all 0.4s ease;
   }
 
   .link-card:hover .link-arrow {
     opacity: 1;
-    transform: translateX(4px);
+    transform: translateX(6px);
   }
 
+  /* Footer & Final Polish */
   .links-footer {
     text-align: center;
-    color: var(--text-light);
-    font-size: 0.95rem;
-    padding-bottom: 40px;
+    padding-bottom: 50px;
+    width: 100%;
   }
 
-  .links-footer a {
+  .social-prompt {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-bottom: 25px;
+  }
+
+  .social-prompt a {
     color: var(--primary);
     font-weight: 700;
-    text-decoration: underline;
+    position: relative;
+    display: inline-block;
+  }
+
+  .social-prompt a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+    bottom: -2px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .social-prompt a:hover::after {
+    transform: scaleX(1);
   }
 
   .brand {
-    margin-top: 25px;
-    font-size: 0.7rem;
-    opacity: 0.5;
+    font-size: 0.75rem;
+    opacity: 0.6;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     color: var(--text-dark);
+  }
+
+  .brand a {
+    font-weight: 700;
+    color: inherit;
+  }
+
+  /* Initial Loading Animations */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  }
+
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
 
   @media (max-width: 480px) {
     .links-page {
-      padding: 40px 15px;
+      padding: 50px 15px;
     }
-    .profile-image {
-      width: 110px;
-      height: 110px;
+    .profile-image-wrapper {
+      width: 120px;
+      height: 120px;
     }
     .link-title {
-      font-size: 1rem;
+      font-size: 1.05rem;
+    }
+    .link-card {
+      padding: 16px 20px;
+      gap: 15px;
+    }
+    .link-icon {
+      width: 46px;
+      height: 46px;
+      font-size: 1.4rem;
     }
     .link-description {
       font-size: 0.8rem;
     }
-    .link-card {
-      padding: 14px 18px;
+    .links-header h1 {
+      font-size: 2.2rem;
     }
   }
 </style>
