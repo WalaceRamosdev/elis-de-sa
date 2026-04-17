@@ -1,0 +1,363 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const links = [
+  {
+    title: "Agendar pelo WhatsApp",
+    url: "https://wa.me/5511986214894",
+    icon: "💬",
+    primary: true,
+    description: "Fale diretamente comigo para agendamentos e dúvidas"
+  },
+  {
+    title: "Conhecer o Site Oficial",
+    url: "/",
+    icon: "🌐",
+    description: "Veja fotos, depoimentos e informações detalhadas"
+  },
+  {
+    title: "Nossos Serviços e Valores",
+    url: "/servicos",
+    icon: "📋",
+    description: "Lista completa de procedimentos e cuidados"
+  },
+  {
+    title: "Taping Terapêutico",
+    url: "https://wa.me/5511986214894?text=Olá%20Elis!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Taping%20Gestacional.",
+    icon: "🩹",
+    description: "Alívio de dores e suporte na gestação"
+  },
+  {
+    title: "Ausculta de BCF",
+    url: "https://wa.me/5511986214894?text=Olá%20Elis!%20Gostaria%20de%20agendar%20uma%20Ausculta%20de%20BCF.",
+    icon: "💓",
+    description: "Ouça o coração do seu bebê no conforto do lar"
+  },
+  {
+    title: "Como Chegar",
+    url: "https://maps.app.goo.gl/9P8LpG8S7H9L9S7H7",
+    icon: "📍",
+    description: "Estrada Santa Mônica, 1373 - Suzano"
+  },
+  {
+    title: "Enviar uma Mensagem",
+    url: "/contato",
+    icon: "✉️",
+    description: "Preencha nosso formulário de contato"
+  }
+];
+---
+
+<Layout 
+  title="Links Úteis | Elis de Sá" 
+  description="Acesse todos os canais de atendimento e serviços da Enfermeira Elis de Sá em um só lugar."
+  hideHeader={true}
+  hideFooter={true}
+  hideWhatsapp={true}
+>
+  <main class="links-page">
+    <div class="background-blobs">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+    </div>
+
+    <div class="container links-container">
+       <header class="links-header">
+        <div class="profile-area">
+          <div class="profile-image">
+            <img src="/images/profissional/elis-hero-clean1.webp" alt="Elis de Sá" />
+          </div>
+          <div class="logo-mini">
+            <img src="/images/logo/logo.svg" alt="Logo Elis de Sá" />
+          </div>
+        </div>
+        <h1>Elis de Sá</h1>
+        <p class="subtitle">Enfermeira Obstétrica & Ginecológica</p>
+        <p class="tagline">Cuidados humanizados em Suzano e Região</p>
+      </header>
+
+      <section class="links-grid">
+        {links.map(link => (
+          <a href={link.url} class={`link-card ${link.primary ? 'primary' : ''}`} target={link.url.startsWith('http') ? '_blank' : '_self'} rel="noopener noreferrer">
+            <div class="link-icon">{link.icon}</div>
+            <div class="link-text">
+              <span class="link-title">{link.title}</span>
+              <span class="link-description">{link.description}</span>
+            </div>
+            <div class="link-arrow">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </div>
+          </a>
+        ))}
+      </section>
+
+      <footer class="links-footer">
+        <p>Acompanhe meu trabalho também no <a href="https://instagram.com/enf_elisdesá" target="_blank">Instagram</a></p>
+        <div class="brand">Desenvolvido por <a href="https://www.sitesalphacode.com.br/solucoes/medicos" target="_blank">Alpha Code</a></div>
+      </footer>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .links-page {
+    min-height: 100vh;
+    background-color: var(--white);
+    position: relative;
+    overflow: hidden;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Background Blobs for Aesthetic */
+  .background-blobs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+  }
+
+  .blob-1 {
+    width: 300px;
+    height: 300px;
+    background-color: var(--rose);
+    top: -100px;
+    right: -100px;
+  }
+
+  .blob-2 {
+    width: 400px;
+    height: 400px;
+    background-color: var(--secondary);
+    bottom: -150px;
+    left: -150px;
+  }
+
+  .links-container {
+    max-width: 550px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  .links-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .profile-area {
+    position: relative;
+    margin-bottom: 25px;
+    display: inline-block;
+  }
+
+  .profile-image {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid var(--white);
+    box-shadow: var(--shadow-lg);
+    background-color: var(--rose);
+  }
+
+  .profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .logo-mini {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: var(--white);
+    padding: 8px;
+    border-radius: 50%;
+    box-shadow: var(--shadow-md);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-mini img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .links-header h1 {
+    font-size: 2.2rem;
+    color: var(--dark-brown);
+    margin-bottom: 8px;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .subtitle {
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+
+  .tagline {
+    color: var(--text-light);
+    font-size: 1rem;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .links-grid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 60px;
+  }
+
+  .link-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(212, 163, 115, 0.15);
+    border-radius: 20px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .link-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+    background: white;
+  }
+
+  .link-card.primary {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--dark-brown) 100%);
+    color: var(--white);
+    border: none;
+    box-shadow: 0 10px 20px rgba(212, 163, 115, 0.3);
+  }
+
+  .link-card.primary:hover {
+    box-shadow: 0 15px 30px rgba(212, 163, 115, 0.4);
+  }
+
+  .link-card.primary .link-description {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .link-card.primary .link-icon {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .link-card.primary .link-arrow {
+    color: var(--white);
+  }
+
+  .link-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--rose);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+
+  .link-text {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .link-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: inherit;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .link-description {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: 2px;
+  }
+
+  .link-arrow {
+    color: var(--primary);
+    opacity: 0.4;
+    transition: var(--transition);
+  }
+
+  .link-card:hover .link-arrow {
+    opacity: 1;
+    transform: translateX(4px);
+  }
+
+  .links-footer {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    padding-bottom: 40px;
+  }
+
+  .links-footer a {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  .brand {
+    margin-top: 25px;
+    font-size: 0.7rem;
+    opacity: 0.5;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--text-dark);
+  }
+
+  @media (max-width: 480px) {
+    .links-page {
+      padding: 40px 15px;
+    }
+    .profile-image {
+      width: 110px;
+      height: 110px;
+    }
+    .link-title {
+      font-size: 1rem;
+    }
+    .link-description {
+      font-size: 0.8rem;
+    }
+    .link-card {
+      padding: 14px 18px;
+    }
+  }
+</style>
