@@ -5,8 +5,8 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Sobre Mim" description="Conheça a história e a trajetória de Elis de Sá, enfermeira com 6 anos de experiência no HC-SP e especialista Einstein em Enfermagem Obstétrica.">
   <section class="about-hero section">
     <div class="container grid-2">
-      <div class="about-image">
-        <!-- Substitua por: /images/profissional/elis-sobre.webp -->
+      <div class="about-image-wrapper">
+        <div class="blob-bg"></div>
         <img src="images/profissional/elis-about-clean.webp" alt="Elis de Sá - Enfermeira" class="profile-img" />
       </div>
       <div class="about-content">
@@ -41,8 +41,9 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
         </div>
-        <div class="image">
-         <img src="images/profissional/elis-about-clean-front.webp" alt="Consultório acolhedor" />
+        <div class="about-image-wrapper">
+          <div class="blob-bg secondary"></div>
+          <img src="images/profissional/elis-about-clean-front.webp" alt="Elis de Sá - Enfermeira em atendimento" class="profile-img" />
         </div>
       </div>
     </div>
@@ -87,9 +88,38 @@ import Layout from '../layouts/Layout.astro';
     grid-template-columns: 1.2fr 1fr;
   }
   
+  .about-image-wrapper {
+    position: relative;
+    padding: 20px;
+  }
+
+  .blob-bg {
+    position: absolute;
+    inset: 0;
+    background: var(--rose);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    z-index: -1;
+    transform: rotate(-5deg) scale(1.1);
+    opacity: 0.6;
+  }
+
+  .blob-bg.secondary {
+    background: var(--nude);
+    border-radius: 70% 30% 30% 70% / 50% 50% 50% 50%;
+    transform: rotate(5deg) scale(1.05);
+  }
+
   .profile-img {
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-lg);
+    width: 100%;
+    height: auto;
+    border-radius: 60px 15px 60px 15px;
+    box-shadow: 0 20px 40px rgba(88, 47, 14, 0.15);
+    border: 8px solid white;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .about-image-wrapper:hover .profile-img {
+    transform: translateY(-10px) scale(1.02);
   }
 
   .lead {
