@@ -9,15 +9,16 @@ import Layout from '../layouts/Layout.astro';
   hideWhatsapp={true}
   hidePortal={true}
 >
-  <main class="manual-page">
+  <div class="manual-page">
     <header class="manual-header">
       <div class="container">
-        <a href="/" class="back-link">← Voltar para o Site</a>
+        <!-- <a href="/" class="back-link">← Voltar para o Site</a> -->
         <div class="header-content">
           <div class="logo-manual">
             <img src="/images/logo/logo.svg" alt="Elis de Sá" />
           </div>
-          <h1>Manual do Seu Novo <br/><span>Ecossistema Digital</span></h1>
+          <h1>Elis de Sá <br/><span>Enfermeira Obstétrica</span></h1>
+          <p><strong>COREN-SP 599056/EO</strong></p>
           <p>Um guia completo sobre a tecnologia, design e funcionalidades criadas exclusivamente para a sua marca.</p>
         </div>
       </div>
@@ -139,12 +140,18 @@ import Layout from '../layouts/Layout.astro';
         <div class="support-footer">
           <h3>Missão Cumprida!</h3>
           <p>Este site foi desenvolvido para refletir o amor e a técnica que você entrega em cada atendimento. Ele está pronto para ser a sua maior ferramenta de trabalho.</p>
-          <a href="https://wa.me/5511986214894" class="btn btn-primary" target="_blank">Dúvidas? Fale com o suporte</a>
+          <a href="https://wa.me/5521999064502" class="btn btn-primary" target="_blank">Dúvidas? Fale com o suporte</a>
         </div>
       </div>
     </section>
-  </main>
+  </div>
 </Layout>
+
+<script is:inline>
+  // Garantir que o scroll funcione, caso algum componente anterior tenha travado o overflow do body
+  document.body.style.overflow = 'auto';
+  document.documentElement.style.overflow = 'auto';
+</script>
 
 <style>
   .manual-page {
