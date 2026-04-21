@@ -1,9 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+interface GalleryImage {
+  src: string;
+  alt: string;
+}
+
 // Array of images found in public/images/galeria/
 // When the client adds photos to that folder, they can be listed here
-const galleryImages = [
+const galleryImages: GalleryImage[] = [
   // { src: '/images/galeria/foto1.jpg', alt: 'Descrição da foto 1' },
 ];
 
