@@ -4,6 +4,9 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsappButton from '../components/WhatsappButton.astro';
 import WelcomePortal from '../components/WelcomePortal.astro';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
+import GoogleSearchConsole from '../components/GoogleSearchConsole.astro';
+import GoogleBusinessSchema from '../components/GoogleBusinessSchema.astro';
 
 interface Props {
 	title: string;
@@ -27,39 +30,6 @@ const {
   hidePortal = false
 } = Astro.props;
 
-const businessSchema = {
-  "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "MedicalBusiness"],
-  "@id": "https://elis-de-sa-enfermeira.com.br/#business",
-  "name": "Elis de Sá - Enfermeira",
-  "image": "https://elis-de-sa-enfermeira.com.br/logo.png",
-  "description": "Enfermeira obstétrica e assistencial com atendimento humanizado em Suzano. Especialista Einstein.",
-  "url": "https://elis-de-sa-enfermeira.com.br",
-  "telephone": "+5511986214894",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Estrada Santa Mônica, 1373",
-    "addressLocality": "Suzano",
-    "addressRegion": "SP",
-    "postalCode": "08610-000",
-    "addressCountry": "BR"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -23.5186, 
-    "longitude": -46.3323
-  },
-  "medicalSpecialty": "Obstetrics",
-  "priceRange": "$$",
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": "08:00",
-      "closes": "20:00"
-    }
-  ]
-};
 ---
 
 <!doctype html>
@@ -69,6 +39,9 @@ const businessSchema = {
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/images/logo/logo.svg" />
 		<meta name="generator" content={Astro.generator} />
+    
+    <GoogleAnalytics />
+    <GoogleSearchConsole />
     
     <title>{title} | Elis de Sá - Enfermeira</title>
     <meta name="description" content={description} />
@@ -89,7 +62,7 @@ const businessSchema = {
     <meta property="twitter:image" content={image} />
 
     <!-- Schema Markup -->
-    <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
+    <GoogleBusinessSchema />
 	</head>
 	<body>
     {!hidePortal && <WelcomePortal />}

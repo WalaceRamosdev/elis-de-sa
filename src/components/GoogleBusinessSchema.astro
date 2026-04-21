@@ -1,0 +1,61 @@
+---
+// Google Business Schema (LocalBusiness & MedicalBusiness)
+// This helps Google Meu Negócio (Google My Business) understand your business details
+// and improves local search visibility.
+
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "MedicalBusiness"],
+  "@id": "https://www.enfermeiraelis.com.br/#business",
+  "name": "Elis de Sá - Enfermeira",
+  "image": "https://www.enfermeiraelis.com.br/logo.png",
+  "description": "Enfermeira obstétrica e assistencial com atendimento humanizado em Suzano. Especialista Einstein.",
+  "url": "https://www.enfermeiraelis.com.br",
+  "telephone": "+5511986214894",
+  "email": "elisenicgio@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Estrada Santa Mônica, 1373",
+    "addressLocality": "Suzano",
+    "addressRegion": "SP",
+    "postalCode": "08610-000",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -23.5186, 
+    "longitude": -46.3323
+  },
+  "medicalSpecialty": "Obstetrics",
+  "priceRange": "$$",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "08:00",
+      "closes": "20:00"
+    }
+  ],
+  "sameAs": [
+    "https://instagram.com/enf_elisdesa",
+    "https://wa.me/5511986214894"
+  ],
+  "areaServed": [
+    "Suzano",
+    "Mogi das Cruzes",
+    "Itaquaquecetuba",
+    "Poá",
+    "Ferraz de Vasconcelos",
+    "Itaquera"
+  ],
+  "vatID": "65.565.455/0001-08",
+  "founder": {
+    "@type": "Person",
+    "name": "Elis de Sá",
+    "jobTitle": "Enfermeira Obstétrica",
+    "identifier": "COREN-SP 599056/EO"
+  }
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />

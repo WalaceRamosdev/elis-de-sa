@@ -137,6 +137,48 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
 
+        <div class="content-block">
+          <h2>5. Monitoramento (SEO & Analytics)</h2>
+          <div class="feature-item">
+            <h4>Como ativar o Google no seu site?</h4>
+            <p>Seu site já está preparado para receber as ferramentas do Google. Siga este guia prático para obter os códigos necessários:</p>
+            
+            <div class="setup-steps">
+              <div class="setup-box">
+                <h5>📊 Google Analytics (Para ver quem visita o site)</h5>
+                <ol>
+                  <li>Acesse o <a href="https://analytics.google.com/" target="_blank">Google Analytics</a> e faça login.</li>
+                  <li>Clique em <strong>Administrador</strong> (ícone de engrenagem no canto inferior esquerdo).</li>
+                  <li>Em "Fluxos de dados", selecione a sua <strong>Web Stream</strong> (ou crie uma nova para <code>www.enfermeiraelis.com.br</code>).</li>
+                  <li>Copie o <strong>ID DE MEDIÇÃO</strong> (é um código que começa com <strong>G-</strong>).</li>
+                </ol>
+              </div>
+
+              <div class="setup-box">
+                <h5>🔍 Google Search Console (Para aparecer no Google)</h5>
+                <ol>
+                  <li>Acesse o <a href="https://search.google.com/search-console" target="_blank">Search Console</a>.</li>
+                  <li>Adicione uma nova propriedade usando o <strong>Prefixo do URL</strong>: <code>https://www.enfermeiraelis.com.br</code>.</li>
+                  <li>Na tela de verificação, escolha a opção <strong>Tag HTML</strong>.</li>
+                  <li>Copie apenas o código que aparece dentro de <code>content="..."</code> (ex: <code>Abc123Xyz...</code>).</li>
+                </ol>
+              </div>
+            </div>
+
+            <p style="margin-top: 20px;"><strong>O que fazer com os códigos?</strong></p>
+            <p class="small">Basta enviá-los para o seu desenvolvedor ou inseri-los no arquivo de configuração do projeto:</p>
+            <code style="display: block; margin-top: 10px; margin-bottom: 20px;">
+              PUBLIC_GA_ID=Cole_o_ID_do_Analytics_aqui (G-xxxxxx)<br/>
+              PUBLIC_GSC_ID=Cole_o_codigo_do_Search_Console_aqui
+            </code>
+
+            <div class="access-links" style="display: flex; gap: 15px; flex-wrap: wrap;">
+              <a href="https://analytics.google.com/" target="_blank" class="btn-outline">Acessar Google Analytics</a>
+              <a href="https://search.google.com/search-console" target="_blank" class="btn-outline">Acessar Search Console</a>
+            </div>
+          </div>
+        </div>
+
         <div class="support-footer">
           <h3>Missão Cumprida!</h3>
           <p>Este site foi desenvolvido para refletir o amor e a técnica que você entrega em cada atendimento. Ele está pronto para ser a sua maior ferramenta de trabalho.</p>
@@ -292,7 +334,7 @@ import Layout from '../layouts/Layout.astro';
   .feature-card h4 { margin-bottom: 15px; font-size: 1.2rem; }
 
   .visual-guide {
-    background: white;
+    background: #dddcdc; /* Light gray for better contrast with light colors */
     padding: 40px;
     border-radius: 20px;
     display: flex;
@@ -301,6 +343,19 @@ import Layout from '../layouts/Layout.astro';
     flex-wrap: wrap;
     gap: 30px;
     border: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .color-swatches {
+    display: flex;
+    gap: 15px;
+  }
+
+  .swatch {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   }
 
   .tech-card {
@@ -385,8 +440,81 @@ import Layout from '../layouts/Layout.astro';
   .support-footer h3 { color: white; font-size: 2.5rem; margin-bottom: 20px; }
   .support-footer p { margin-bottom: 40px; font-size: 1.2rem; }
 
+  .setup-steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 25px;
+  }
+
+  .setup-box {
+    background: #fff;
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  }
+
+  .setup-box h5 {
+    color: var(--dark-brown);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .setup-box ol {
+    padding-left: 20px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+  }
+
+  .setup-box li {
+    margin-bottom: 10px;
+  }
+
+  .setup-box strong {
+    color: var(--primary);
+  }
+
+  .btn-outline {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+  }
+
+  .btn-outline:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 15px 35px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background: white;
+    color: var(--dark-brown);
+    transform: translateY(-3px);
+  }
+
   @media (max-width: 992px) {
-    .grid, .feature-grid { grid-template-columns: 1fr; }
+    .grid, .feature-grid, .setup-steps { grid-template-columns: 1fr; }
     .header-content h1 { font-size: 2.5rem; }
     .visual-guide { flex-direction: column; text-align: center; }
   }
