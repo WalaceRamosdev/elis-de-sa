@@ -1,15 +1,15 @@
 ---
 // Google Analytics (GA4) Tracking Script
-const GA_ID = 'G-E9NYGFFR09';
 ---
 
 <!-- Google tag (gtag.js) -->
-<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
-<script is:inline define:vars={{ GA_ID }}>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E9NYGFFR09"></script>
+<script is:inline>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', GA_ID);
+  gtag('config', 'G-E9NYGFFR09');
 </script>
+
 
