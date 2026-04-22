@@ -138,43 +138,43 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <div class="content-block">
-          <h2>5. Monitoramento (SEO & Analytics)</h2>
+          <h2>5. Monitoramento Ativo (SEO & Analytics)</h2>
           <div class="feature-item">
-            <h4>Como ativar o Google no seu site?</h4>
-            <p>Seu site já está preparado para receber as ferramentas do Google. Siga este guia prático para obter os códigos necessários:</p>
+            <div class="status-badge-active">✅ Monitoramento 100% Configurado</div>
+            <p>Seu site não é apenas uma página bonita; ele é agora uma ferramenta de inteligência de mercado. Instalamos e configuramos as ferramentas oficiais do Google para que você tenha total controle sobre o crescimento da sua marca digital.</p>
             
             <div class="setup-steps">
-              <div class="setup-box">
-                <h5>📊 Google Analytics (Para ver quem visita o site)</h5>
-                <ol>
-                  <li>Acesse o <a href="https://analytics.google.com/" target="_blank">Google Analytics</a> e faça login.</li>
-                  <li>Clique em <strong>Administrador</strong> (ícone de engrenagem no canto inferior esquerdo).</li>
-                  <li>Em "Fluxos de dados", selecione a sua <strong>Web Stream</strong> (ou crie uma nova para <code>www.enfermeiraelis.com.br</code>).</li>
-                  <li>Copie o <strong>ID DE MEDIÇÃO</strong> (é um código que começa com <strong>G-</strong>).</li>
-                </ol>
+              <div class="setup-box highlight-box">
+                <h5>📊 Google Analytics (GA4)</h5>
+                <p><strong>O que foi feito:</strong> Conexão direta com o ID <code>G-E9NYGFFR09</code>.</p>
+                <p><strong>O impacto no seu negócio:</strong></p>
+                <ul>
+                  <li>Descubra quantas pessoas visitam seu site por dia.</li>
+                  <li>Saiba se elas vieram pelo Instagram, Google ou indicação direta.</li>
+                  <li>Identifique quais serviços (como Taping ou Consultoria) despertam mais interesse.</li>
+                </ul>
               </div>
 
-              <div class="setup-box">
-                <h5>🔍 Google Search Console (Para aparecer no Google)</h5>
-                <ol>
-                  <li>Acesse o <a href="https://search.google.com/search-console" target="_blank">Search Console</a>.</li>
-                  <li>Adicione uma nova propriedade usando o <strong>Prefixo do URL</strong>: <code>https://www.enfermeiraelis.com.br</code>.</li>
-                  <li>Na tela de verificação, escolha a opção <strong>Tag HTML</strong>.</li>
-                  <li>Copie apenas o código que aparece dentro de <code>content="..."</code> (ex: <code>Abc123Xyz...</code>).</li>
-                </ol>
+              <div class="setup-box highlight-box">
+                <h5>🔍 Google Search Console</h5>
+                <p><strong>O que foi feito:</strong> Verificação de propriedade e indexação de Sitemap.</p>
+                <p><strong>O impacto no seu negócio:</strong></p>
+                <ul>
+                  <li>Garante que você apareça nas buscas quando alguém procurar por "Enfermeira Obstétrica em Suzano".</li>
+                  <li>Monitora a saúde do site e avisa se houver qualquer problema de carregamento no Google.</li>
+                  <li>Ajuda a entender quais palavras as clientes usam para te encontrar.</li>
+                </ul>
               </div>
             </div>
 
-            <p style="margin-top: 20px;"><strong>O que fazer com os códigos?</strong></p>
-            <p class="small">Basta enviá-los para o seu desenvolvedor ou inseri-los no arquivo de configuração do projeto:</p>
-            <code style="display: block; margin-top: 10px; margin-bottom: 20px;">
-              PUBLIC_GA_ID=Cole_o_ID_do_Analytics_aqui (G-xxxxxx)<br/>
-              PUBLIC_GSC_ID=Cole_o_codigo_do_Search_Console_aqui
-            </code>
+            <div class="seo-impact-card">
+              <h4>✨ Por que isso é importante?</h4>
+              <p>Com esses dados, você deixa de "adivinhar" e passa a "saber". Se você notar que muitas pessoas visitam a página de Serviços mas não clicam no WhatsApp, podemos ajustar o texto para converter melhor. Seu site agora trabalha para você, gerando dados valiosos para suas decisões de marketing.</p>
+            </div>
 
-            <div class="access-links" style="display: flex; gap: 15px; flex-wrap: wrap;">
-              <a href="https://analytics.google.com/" target="_blank" class="btn-outline">Acessar Google Analytics</a>
-              <a href="https://search.google.com/search-console" target="_blank" class="btn-outline">Acessar Search Console</a>
+            <div class="access-links" style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 30px;">
+              <a href="https://analytics.google.com/" target="_blank" class="btn-outline">Ver Relatórios de Visitas</a>
+              <a href="https://search.google.com/search-console" target="_blank" class="btn-outline">Ver Desempenho no Google</a>
             </div>
           </div>
         </div>
@@ -511,6 +511,40 @@ import Layout from '../layouts/Layout.astro';
     background: white;
     color: var(--dark-brown);
     transform: translateY(-3px);
+  }
+
+  .status-badge-active {
+    display: inline-block;
+    background: #e9f7ef;
+    color: #27ae60;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    border: 1px solid #27ae60;
+  }
+
+  .highlight-box {
+    border: 2px solid var(--rose) !important;
+    background: #fff !important;
+  }
+
+  .highlight-box h5 {
+    color: var(--primary) !important;
+  }
+
+  .seo-impact-card {
+    margin-top: 30px;
+    padding: 30px;
+    background: var(--nude);
+    border-radius: 20px;
+    border-left: 5px solid var(--primary);
+  }
+
+  .seo-impact-card h4 {
+    margin-bottom: 15px;
+    color: var(--dark-brown);
   }
 
   @media (max-width: 992px) {
