@@ -7,7 +7,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="container grid-2">
       <div class="about-image-wrapper">
         <div class="blob-bg"></div>
-        <img src="images/profissional/elis-about-clean.webp" alt="Elis de Sá - Enfermeira" class="profile-img" />
+        <img src="/images/profissional/elis-about-clean.webp" alt="Elis de Sá - Enfermeira" class="profile-img" />
       </div>
       <div class="about-content">
         <span class="badge">Minha Trajetória</span>
@@ -43,7 +43,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <div class="about-image-wrapper">
           <div class="blob-bg secondary"></div>
-          <img src="images/profissional/elis-about-clean-front.webp" alt="Elis de Sá - Enfermeira em atendimento" class="profile-img" />
+          <img src="/images/profissional/elis-about-clean-front.webp" alt="Elis de Sá - Enfermeira em atendimento" class="profile-img" />
         </div>
       </div>
     </div>
@@ -140,6 +140,7 @@ import Layout from '../layouts/Layout.astro';
   
   .stats {
     display: flex;
+    flex-wrap: wrap;
     gap: 30px;
     margin-top: 40px;
   }
@@ -184,13 +185,30 @@ import Layout from '../layouts/Layout.astro';
     color: var(--dark-brown);
   }
 
+  .badge {
+    display: inline-block;
+    padding: 5px 14px;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  .section {
+    overflow: hidden;
+  }
+
   @media (max-width: 768px) {
     .grid-2, .grid-2.reverse {
       grid-template-columns: 1fr;
       text-align: center;
     }
     
-    .grid-2.reverse .image { order: -1; }
+    .grid-2.reverse .about-image-wrapper { order: -1; }
     
     .stats { justify-content: center; }
     
