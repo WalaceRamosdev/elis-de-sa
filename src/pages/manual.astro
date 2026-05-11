@@ -184,6 +184,10 @@ import Layout from '../layouts/Layout.astro';
           <p>Este site foi desenvolvido para refletir o amor e a técnica que você entrega em cada atendimento. Ele está pronto para ser a sua maior ferramenta de trabalho.</p>
           <a href="https://wa.me/5521999064502" class="btn btn-primary" target="_blank">Dúvidas? Fale com o suporte</a>
         </div>
+
+        <footer class="manual-footer">
+          <p>Desenvolvido com excelência por <a href="https://www.sitesalphacode.com.br/solucoes/psicologos" target="_blank" rel="noopener" title="Criação de Sites para Psicólogos" class="hover:text-white transition-colors font-medium">Sites Alpha Code</a></p>
+        </footer>
       </div>
     </section>
   </div>
@@ -544,6 +548,26 @@ import Layout from '../layouts/Layout.astro';
 
   .seo-impact-card h4 {
     margin-bottom: 15px;
+    color: var(--dark-brown);
+  }
+
+  .manual-footer {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    font-size: 0.9rem;
+    color: var(--text-light);
+  }
+
+  .manual-footer a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .manual-footer a:hover {
     color: var(--dark-brown);
   }
 
